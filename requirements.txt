@@ -1,0 +1,11 @@
+Flask
+python-magic
+imutils
+numpy
+cmake
+dlib
+opencv-python
+matplotlib
+pandas
+Pillow
+scikit-image

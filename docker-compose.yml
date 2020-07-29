@@ -1,0 +1,12 @@
+version: '3'
+services:
+  abcompare:
+    container_name: beauty-agenda
+    image: shes990129/beauty-agenda
+    restart: always
+    environment:
+      - PYTHONIOENCODING=utf-8
+    ports:
+      - 5000:5000
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
