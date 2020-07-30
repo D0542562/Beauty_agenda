@@ -60,8 +60,7 @@ def main():
         left_black_circle = black_circle(bgr1,'left_eye_down')
         right_black_circle = black_circle(bgr1,'right_eye_down')
         
-        acne_left = dot(bgr1,'left_cheek')
-        acne_right = dot(bgr1,'right_cheek')
+        have_acne = dot(bgr1,'all')
 
         left_cheek = vertical_wrinkle(bgr1,'left_cheek')
         right_cheek = vertical_wrinkle(bgr1,'right_cheek')
@@ -86,7 +85,7 @@ def main():
         nose = True if nose > 0.21 else False
         smile_line = True if left_cheek and right_cheek and nose else False
         #痘痘
-        acne = True if acne_left > 1 and acne_right > 1 else False
+        acne = True if have_acne > 2 else False
         #雀斑
         freckle = True if freckle > 100  else False
 
