@@ -307,7 +307,7 @@ def eye_winkle(filename,select_region):
     _,m3 = cv2.threshold(m , 0.99999, 1, cv2.THRESH_BINARY)
     m4 = copy.deepcopy(m)
     m4[np.where(m3==0)] = 0
-    _,m4 = cv2.threshold(m4 , 0.99999, 1, cv2.THRESH_BINARY)
+    
     #閉運算之後的抓皺紋圖 面積
     eye_winkle = np.sum(m4)/(m3.shape[0]*m3.shape[1])
     return eye_winkle
@@ -329,7 +329,6 @@ def fronthead_range(filename):
     m4 = copy.deepcopy(m)
     m4[np.where(m3==0)] = 0
     m4 = close(m4, 1, 2, 3)
-    _,m4 = cv2.threshold(m4 , 0.99999, 1, cv2.THRESH_BINARY)
 
     fronthead_range = np.sum(m4)/(m3.shape[0]*m3.shape[1])
     return fronthead_range
@@ -352,26 +351,7 @@ def vertical_wrinkle(filename,select_region):
     m4 = copy.deepcopy(m)
     m4[np.where(m3==0)] = 0
     m4 = close(m4, 1, 3, 3)
-    _,m4 = cv2.threshold(m4 , 0.99999, 1, cv2.THRESH_BINARY)
 
     #抓到的皺紋比例
     vertical_wrinkle = np.sum(m4)/(m3.shape[0]*m3.shape[1])
     return vertical_wrinkle
-
-# regions = ['fronthead_range',
-#              'between_eyebrow',
-#              'left_eye_left',
-#              'right_eye_right',
-#              'left_eye_down',
-#              'right_eye_down',
-#              'left_cheek',
-#              'right_cheek',
-#              'nose']
-
-# y_regions = ['left_eye_left',
-#              'right_eye_right']
-
-# x_regions = ['between_eyebrow',
-#              'left_cheek',
-#              'right_cheek',
-#              'nose']
