@@ -292,11 +292,11 @@ def eye_winkle(filename,select_region):
 
     S2_x = cv2.Sobel(S,cv2.CV_16S,1,0)
     S2_y = cv2.Sobel(S,cv2.CV_16S,0,1)
-
+    
     S2_x = cv2.convertScaleAbs(S2_x)
     S2_y = cv2.convertScaleAbs(S2_y)
-
-    S2 = cv2.addWeighted(S2_x,0.5,S2_y,0.5,0)        
+    
+    S2 = cv2.addWeighted(S2_x,0.5,S2_y,0.5,0)
     S2 = np.abs(S2 - np.mean(S2))
     S2 = norm(S2)
     m = (S2-np.mean(S2)) / np.std(S2)
@@ -307,7 +307,7 @@ def eye_winkle(filename,select_region):
     _,m3 = cv2.threshold(m , 0.99999, 1, cv2.THRESH_BINARY)
     m4 = copy.deepcopy(m)
     m4[np.where(m3==0)] = 0
-    
+
     #閉運算之後的抓皺紋圖 面積
     eye_winkle = np.sum(m4)/(m3.shape[0]*m3.shape[1])
     return eye_winkle
