@@ -67,27 +67,27 @@ def main():
         nose = vertical_wrinkle(bgr1,'nose')
 
         freckle = little_dot(bgr1)
-         #抬頭紋 forehead
+        #抬頭紋 forehead
         forehead = True if forehead > 0.2 else False
         #川字紋 chuan
-        chuan = True if chuan > 0.24 else False
+        chuan = True if chuan > 0.225 else False
         #魚尾紋 crow
-        left_eye_winkle = True if left_eye_winkle > 0.13 else False
-        right_eye_winkle = True if right_eye_winkle > 0.12 else False
+        left_eye_winkle = True if left_eye_winkle > 0.2262 else False
+        right_eye_winkle = True if right_eye_winkle > 0.2262 else False
         crow = True if left_eye_winkle and right_eye_winkle == True else False
         #黑眼圈
         left_black_circle = True if left_black_circle > 0.09 else False
         right_black_circle = True if right_black_circle > 0.09 else False
         dark_circle = True if left_black_circle and right_black_circle == True else False
         #法令紋 smile_line
-        left_cheek = True if left_cheek > 0.21 else False
-        right_cheek = True if right_cheek > 0.21 else False
-        nose = True if nose > 0.21 else False
+        left_cheek = True if left_cheek > 0.19 else False
+        right_cheek = True if right_cheek > 0.19 else False
+        nose = True if nose > 0.19 else False
         smile_line = True if left_cheek and right_cheek and nose else False
         #痘痘
         acne = True if have_acne > 3 else False
         #雀斑
-        freckle = True if freckle > 100  else False
+        freckle = True if freckle > 150  else False
 
     # 整理回傳資料
     data = {
