@@ -80,8 +80,8 @@ def main():
         right_black_circle = True if right_black_circle > 0.09 else False
         dark_circle = True if left_black_circle and right_black_circle == True else False
         #法令紋 smile_line
-        left_cheek = True if left_cheek > 0.19 else False
-        right_cheek = True if right_cheek > 0.19 else False
+        left_cheek = True if left_cheek > 0.18 else False
+        right_cheek = True if right_cheek > 0.18 else False
         nose = True if nose > 0.19 else False
         smile_line = True if left_cheek and right_cheek and nose else False
         #痘痘
