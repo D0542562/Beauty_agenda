@@ -5,7 +5,8 @@ RUN apt-get -y update && apt-get install -y \
 	libsm6 \
 	libxext6 \
 	libxrender1 \
-	libmagic-dev
+	libmagic-dev \
+        libgl1-mesa-dev
 
 COPY requirements.txt .
 RUN pip3 --no-cache-dir install -r requirements.txt
